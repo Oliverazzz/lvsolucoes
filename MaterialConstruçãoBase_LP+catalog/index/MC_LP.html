@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ConstruTech — Materiais de Construção</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../CSS/style_LP.css">
+
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor">
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<!-- SIDEBAR CATALOG -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <span class="sidebar-title">📋 Catálogo</span>
+    <button class="close-btn" onclick="closeSidebar()">✕</button>
+  </div>
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input class="search-input" id="catalogSearch" type="text" placeholder="Buscar produto..." oninput="filterCatalog(this.value)">
+    </div>
+  </div>
+  <div class="categories" id="categoryChips">
+    <button class="cat-chip active" onclick="filterByCategory('todos', this)">Todos</button>
+    <button class="cat-chip" onclick="filterByCategory('cimento', this)">Cimento</button>
+    <button class="cat-chip" onclick="filterByCategory('ferragens', this)">Ferragens</button>
+    <button class="cat-chip" onclick="filterByCategory('elétrico', this)">Elétrico</button>
+    <button class="cat-chip" onclick="filterByCategory('hidráulico', this)">Hidráulico</button>
+    <button class="cat-chip" onclick="filterByCategory('madeira', this)">Madeira</button>
+    <button class="cat-chip" onclick="filterByCategory('tintas', this)">Tintas</button>
+  </div>
+  <div class="catalog-list" id="catalogList"><!-- JS renderizado --></div>
+</aside>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="logo">CONSTRU<span>TECH</span></div>
+  <div class="nav-links">
+    <a href="#featured">Produtos</a>
+    <a href="#services">Serviços</a>
+    <a href="#contact">Contato</a>
+  </div>
+  <div class="nav-cta">
+    <button class="catalog-btn" onclick="openSidebar()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+      </svg>
+      Catálogo
+    </button>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main" id="mainContent">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">⚡ Distribuidor Oficial — Região Sul</div>
+      <h1 class="hero-title">
+        MATERIAIS<br>DE <em>CONSTRUÇÃO</em><br>PREMIUM
+      </h1>
+      <p class="hero-sub">
+        Do alicerce ao acabamento. Mais de 5.000 produtos com entrega rápida, qualidade garantida e o melhor preço do mercado.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="openSidebar()">
+          Ver Catálogo Completo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+        <button class="btn-secondary">Solicitar Orçamento</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num" data-target="5000">0</div>
+          <div class="stat-lbl">Produtos</div>
+        </div>
+        <div style="width:1px;height:40px;background:var(--border)"></div>
+        <div>
+          <div class="stat-num" data-target="12">0</div>
+          <div class="stat-lbl">Anos de mercado</div>
+        </div>
+        <div style="width:1px;height:40px;background:var(--border)"></div>
+        <div>
+          <div class="stat-num" data-target="98">0</div>
+          <div class="stat-lbl">% Satisfação</div>
+        </div>
+        <div style="width:1px;height:40px;background:var(--border)"></div>
+        <div>
+          <div class="stat-num" data-target="24">0</div>
+          <div class="stat-lbl">h Entrega</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track" id="marqueeTrack">
+      <div class="marquee-item">🏗️ CIMENTO <span>★</span></div>
+      <div class="marquee-item">🔩 FERRAGENS <span>★</span></div>
+      <div class="marquee-item">⚡ ELÉTRICO <span>★</span></div>
+      <div class="marquee-item">💧 HIDRÁULICO <span>★</span></div>
+      <div class="marquee-item">🪵 MADEIRA <span>★</span></div>
+      <div class="marquee-item">🎨 TINTAS <span>★</span></div>
+      <div class="marquee-item">🧱 ALVENARIA <span>★</span></div>
+      <div class="marquee-item">🔧 FERRAMENTAS <span>★</span></div>
+      <div class="marquee-item">🏗️ CIMENTO <span>★</span></div>
+      <div class="marquee-item">🔩 FERRAGENS <span>★</span></div>
+      <div class="marquee-item">⚡ ELÉTRICO <span>★</span></div>
+      <div class="marquee-item">💧 HIDRÁULICO <span>★</span></div>
+      <div class="marquee-item">🪵 MADEIRA <span>★</span></div>
+      <div class="marquee-item">🎨 TINTAS <span>★</span></div>
+      <div class="marquee-item">🧱 ALVENARIA <span>★</span></div>
+      <div class="marquee-item">🔧 FERRAMENTAS <span>★</span></div>
+    </div>
+  </div>
+
+  <!-- FEATURED -->
+  <section class="section featured" id="featured">
+    <div>
+      <div class="section-label reveal">// destaques</div>
+      <h2 class="section-title reveal">PRODUTOS EM<br>DESTAQUE</h2>
+      <p class="section-sub reveal">Os itens mais buscados com disponibilidade imediata e condições especiais.</p>
+    </div>
+    <div class="featured-grid reveal">
+      <div class="feat-card" onclick="addToCart('Cimento CP-II 50kg')">
+        <div class="feat-img" style="font-size:80px">🏗️
+          <div class="feat-img-overlay"></div>
+        </div>
+        <div class="feat-body">
+          <span class="feat-tag">Mais Vendido</span>
+          <div class="feat-name">Cimento Portland CP-II</div>
+          <div class="feat-desc">Alta resistência para estruturas, fundações e pisos industriais. Saco 50kg, palete com 40 sacos.</div>
+          <div class="feat-footer">
+            <span class="feat-price">R$ 38,90 / sc</span>
+            <button class="feat-btn">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card" onclick="addToCart('Telha Cerâmica')">
+        <div class="feat-img">🏠
+          <div class="feat-img-overlay"></div>
+        </div>
+        <div class="feat-body">
+          <span class="feat-tag">Promoção</span>
+          <div class="feat-name">Telha Cerâmica Portuguesa</div>
+          <div class="feat-desc">Resistente, durável e estética. Caixa com 10 unidades.</div>
+          <div class="feat-footer">
+            <span class="feat-price">R$ 89,00 / cx</span>
+            <button class="feat-btn">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card" onclick="addToCart('Tinta Acrílica')">
+        <div class="feat-img">🎨
+          <div class="feat-img-overlay"></div>
+        </div>
+        <div class="feat-body">
+          <span class="feat-tag">Novo</span>
+          <div class="feat-name">Tinta Acrílica Premium 18L</div>
+          <div class="feat-desc">Alto rendimento, lavável e cobertura superior. 300+ cores disponíveis.</div>
+          <div class="feat-footer">
+            <span class="feat-price">R$ 219,90 / bl</span>
+            <button class="feat-btn">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card" onclick="addToCart('Tijolo Cerâmico')">
+        <div class="feat-img">🧱
+          <div class="feat-img-overlay"></div>
+        </div>
+        <div class="feat-body">
+          <span class="feat-tag">Oferta</span>
+          <div class="feat-name">Tijolo Cerâmico 6 Furos</div>
+          <div class="feat-desc">Padrão ABNT, acabamento uniforme. Mil unidades por palete.</div>
+          <div class="feat-footer">
+            <span class="feat-price">R$ 0,68 / un</span>
+            <button class="feat-btn">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div style="max-width:600px">
+      <div class="section-label reveal">// serviços</div>
+      <h2 class="section-title reveal">TUDO QUE VOCÊ<br>PRECISA</h2>
+      <p class="section-sub reveal">Do produto ao suporte técnico, estamos com você em cada etapa da obra.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🚚</div>
+        <div class="service-name">Entrega Expressa</div>
+        <div class="service-desc">Entrega em até 24h para toda a região metropolitana. Rastreamento em tempo real.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📐</div>
+        <div class="service-name">Cálculo de Materiais</div>
+        <div class="service-desc">Nossa equipe técnica calcula exatamente o que você precisa. Sem desperdício.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">💳</div>
+        <div class="service-name">Crédito Facilitado</div>
+        <div class="service-desc">Parcele em até 12x sem juros no cartão ou boleto para pessoa jurídica.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🔧</div>
+        <div class="service-name">Suporte Técnico</div>
+        <div class="service-desc">Engenheiros disponíveis para consultas técnicas sobre produtos e aplicações.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner reveal" id="contact">
+    <div class="cta-text">
+      <div class="section-label">// orçamento</div>
+      <h2 class="section-title">SOLICITE SEU<br>ORÇAMENTO</h2>
+      <p class="section-sub">Preços especiais para construtoras, empreiteiras e compras no atacado.</p>
+    </div>
+    <div class="cta-actions">
+      <button class="btn-primary" style="font-size:16px;padding:16px 40px" onclick="showToast('📞 Em breve entraremos em contato!')">
+        Falar com Consultor
+      </button>
+      <button class="btn-secondary" style="text-align:center" onclick="openSidebar()">Ver Catálogo Completo</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <div class="logo">CONSTRU<span>TECH</span></div>
+      <div class="footer-copy">© 2025 ConstruTech. Todos os direitos reservados.</div>
+    </div>
+    <div class="footer-links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="#">CNPJ: 00.000.000/0001-00</a>
+    </div>
+  </footer>
+
+</main>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="toast-icon" id="toastIcon">✅</span>
+  <span id="toastMsg">Produto adicionado!</span>
+</div>
+
+<script>
+// ─── DATA ───────────────────────────────────────────
+const products = [
+  { name: 'Cimento CP-II 50kg', cat: 'cimento', price: 'R$ 38,90', icon: '🏗️' },
+  { name: 'Cimento CP-V 50kg', cat: 'cimento', price: 'R$ 41,50', icon: '🏗️' },
+  { name: 'Argamassa ACIII 20kg', cat: 'cimento', price: 'R$ 22,00', icon: '⬜' },
+  { name: 'Parafuso Sextavado M8', cat: 'ferragens', price: 'R$ 0,45', icon: '🔩' },
+  { name: 'Prego Liso 17x27 1kg', cat: 'ferragens', price: 'R$ 8,90', icon: '📌' },
+  { name: 'Dobradiça Pesada 3"', cat: 'ferragens', price: 'R$ 6,80', icon: '🔗' },
+  { name: 'Fechadura Roseta', cat: 'ferragens', price: 'R$ 34,90', icon: '🔐' },
+  { name: 'Cabo Flexível 2,5mm 100m', cat: 'elétrico', price: 'R$ 189,00', icon: '⚡' },
+  { name: 'Disjuntor Bipolar 32A', cat: 'elétrico', price: 'R$ 28,50', icon: '💡' },
+  { name: 'Tomada 2P+T Espelho', cat: 'elétrico', price: 'R$ 12,90', icon: '🔌' },
+  { name: 'Eletroduto PVC 3/4" 3m', cat: 'elétrico', price: 'R$ 9,20', icon: '🔋' },
+  { name: 'Joelho PVC 50mm', cat: 'hidráulico', price: 'R$ 4,50', icon: '💧' },
+  { name: 'Tubo PVC Esgoto 100mm 6m', cat: 'hidráulico', price: 'R$ 67,00', icon: '🚿' },
+  { name: 'Registro de Gaveta 3/4"', cat: 'hidráulico', price: 'R$ 32,00', icon: '🚰' },
+  { name: 'Caixa D\'água 500L', cat: 'hidráulico', price: 'R$ 390,00', icon: '🪣' },
+  { name: 'Pinus Bruto 2x4 3m', cat: 'madeira', price: 'R$ 18,90', icon: '🪵' },
+  { name: 'Compensado OSB 15mm', cat: 'madeira', price: 'R$ 85,00', icon: '🪵' },
+  { name: 'Porta Macica Angelim', cat: 'madeira', price: 'R$ 340,00', icon: '🚪' },
+  { name: 'Tinta Acrílica 18L Branco', cat: 'tintas', price: 'R$ 219,90', icon: '🎨' },
+  { name: 'Selador Parede 18L', cat: 'tintas', price: 'R$ 98,00', icon: '🖌️' },
+  { name: 'Verniz Brilhante 3,6L', cat: 'tintas', price: 'R$ 65,00', icon: '✨' },
+  { name: 'Tijolo Cerâmico 6F', cat: 'cimento', price: 'R$ 0,68', icon: '🧱' },
+  { name: 'Telha Cerâmica cx/10', cat: 'cimento', price: 'R$ 89,00', icon: '🏠' },
+];
+
+let activeCategory = 'todos';
+
+function renderCatalog(items) {
+  const list = document.getElementById('catalogList');
+  if (items.length === 0) {
+    list.innerHTML = '<div class="no-results">Nenhum produto encontrado 😕</div>';
+    return;
+  }
+  list.innerHTML = items.map(p => `
+    <div class="catalog-item" onclick="addToCart('${p.name}')">
+      <div class="item-icon">${p.icon}</div>
+      <div class="item-info">
+        <div class="item-name">${p.name}</div>
+        <div class="item-cat">${p.cat.charAt(0).toUpperCase()+p.cat.slice(1)}</div>
+      </div>
+      <div class="item-price">${p.price}</div>
+    </div>
+  `).join('');
+}
+
+function filterCatalog(query) {
+  const q = query.toLowerCase();
+  let items = activeCategory === 'todos' ? products : products.filter(p => p.cat === activeCategory);
+  if (q) items = items.filter(p => p.name.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q));
+  renderCatalog(items);
+}
+
+function filterByCategory(cat, el) {
+  activeCategory = cat;
+  document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  const q = document.getElementById('catalogSearch').value;
+  filterCatalog(q);
+}
+
+renderCatalog(products);
+
+// ─── SIDEBAR ─────────────────────────────────────────
+function openSidebar() {
+  document.getElementById('sidebar').classList.add('open');
+  document.getElementById('overlay').classList.add('active');
+  document.getElementById('mainContent').classList.add('shifted');
+  document.getElementById('mainNav').classList.add('shifted');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('active');
+  document.getElementById('mainContent').classList.remove('shifted');
+  document.getElementById('mainNav').classList.remove('shifted');
+}
+
+// ─── TOAST ────────────────────────────────────────────
+let toastTimer;
+function showToast(msg, icon = '✅') {
+  const t = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  document.getElementById('toastIcon').textContent = icon;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+function addToCart(name) {
+  showToast(`${name} adicionado ao orçamento!`, '🛒');
+}
+
+// ─── CURSOR ───────────────────────────────────────────
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+(function animate() {
+  dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+  rx += (mx - rx) * .12; ry += (my - ry) * .12;
+  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  requestAnimationFrame(animate);
+})();
+
+// ─── SCROLL REVEAL ─────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ─── COUNT-UP STATS ─────────────────────────────────────
+function countUp(el, target, suffix = '') {
+  let start = 0;
+  const step = target / 60;
+  const t = setInterval(() => {
+    start += step;
+    if (start >= target) { el.textContent = target + suffix; clearInterval(t); return; }
+    el.textContent = Math.floor(start) + suffix;
+  }, 20);
+}
+const statsObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('[data-target]').forEach(el => {
+        const t = parseInt(el.getAttribute('data-target'));
+        const suffix = el.parentElement.querySelector('.stat-lbl').textContent === '% Satisfação' ? '%' :
+                       el.parentElement.querySelector('.stat-lbl').textContent === 'h Entrega' ? 'h' : '+';
+        countUp(el, t, suffix);
+      });
+      statsObserver.disconnect();
+    }
+  });
+}, { threshold: .5 });
+const heroStats = document.querySelector('.hero-stats');
+if (heroStats) statsObserver.observe(heroStats);
+
+// Keyboard shortcut: K to open catalog
+document.addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); openSidebar(); }
+  if (e.key === 'Escape') closeSidebar();
+});
+</script>
+</body>
+</html>

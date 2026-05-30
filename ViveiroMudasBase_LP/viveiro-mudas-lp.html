@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viveiro Raízes do Cerrado – Mudas & Plantas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde-escuro: #1a3a2a;
+    --verde-medio: #2d6a4f;
+    --verde-claro: #52b788;
+    --terra: #c9a84c;
+    --creme: #f8f4ec;
+    --branco: #ffffff;
+    --texto: #2c2c2c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--creme);
+    color: var(--texto);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(160deg, rgba(26,58,42,0.88) 0%, rgba(45,106,79,0.72) 60%, rgba(82,183,136,0.45) 100%),
+      url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1400&q=80') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 8vw;
+    position: relative;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--creme));
+  }
+
+  .badge {
+    background: var(--terra);
+    color: var(--branco);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    display: inline-block;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 900;
+    color: var(--branco);
+    line-height: 1.05;
+    max-width: 700px;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+
+  .hero h1 span { color: var(--terra); }
+
+  .hero p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255,255,255,0.85);
+    max-width: 480px;
+    margin: 20px 0 36px;
+    line-height: 1.7;
+    font-weight: 300;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+
+  .btn-wpp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: fadeUp 0.7s 0.3s ease both;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.35);
+  }
+
+  .btn-wpp:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(37,211,102,0.45); }
+
+  .btn-wpp svg { width: 22px; height: 22px; fill: #fff; }
+
+  /* ── NAV SIMPLES ── */
+  nav {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 8vw;
+    z-index: 10;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--branco);
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .logo span { color: var(--terra); }
+
+  nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--terra); }
+
+  /* ── SOBRE ── */
+  .sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 80px 8vw;
+    align-items: center;
+  }
+
+  .sobre-img {
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .sobre-img img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sobre-img::before {
+    content: '';
+    position: absolute;
+    inset: -12px -12px auto auto;
+    width: 60%;
+    height: 60%;
+    border-top: 4px solid var(--terra);
+    border-right: 4px solid var(--terra);
+    z-index: 1;
+    border-radius: 0 6px 0 0;
+  }
+
+  .sobre-texto .tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--verde-claro);
+    margin-bottom: 12px;
+  }
+
+  .sobre-texto h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--verde-escuro);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .sobre-texto p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 16px;
+  }
+
+  .stats {
+    display: flex;
+    gap: 36px;
+    margin-top: 32px;
+  }
+
+  .stat strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--verde-medio);
+    font-weight: 900;
+  }
+
+  .stat span {
+    font-size: 0.82rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ── PRODUTOS ── */
+  .produtos {
+    background: var(--verde-escuro);
+    padding: 80px 8vw;
+  }
+
+  .sec-header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+
+  .sec-header .tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .sec-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: var(--branco);
+    font-weight: 700;
+  }
+
+  .grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .card-produto {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s;
+  }
+
+  .card-produto:hover {
+    transform: translateY(-6px);
+    border-color: var(--terra);
+  }
+
+  .card-produto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .card-produto-body {
+    padding: 20px;
+  }
+
+  .card-produto h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--branco);
+    margin-bottom: 8px;
+  }
+
+  .card-produto p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+
+  /* ── DIFERENCIAIS ── */
+  .diferenciais {
+    padding: 80px 8vw;
+    background: var(--creme);
+  }
+
+  .diferenciais .sec-header h2 { color: var(--verde-escuro); }
+
+  .grid-dif {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .dif-item {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .dif-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    background: var(--verde-medio);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+
+  .dif-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--verde-escuro);
+    margin-bottom: 6px;
+  }
+
+  .dif-item p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* ── CTA FINAL ── */
+  .cta-final {
+    background:
+      linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-medio) 100%);
+    padding: 80px 8vw;
+    text-align: center;
+  }
+
+  .cta-final h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--branco);
+    margin-bottom: 16px;
+  }
+
+  .cta-final p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0f1f17;
+    padding: 28px 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer .logo { font-size: 1rem; }
+
+  footer p {
+    color: rgba(255,255,255,0.35);
+    font-size: 0.8rem;
+  }
+
+  /* ── ANIMAÇÕES ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .sobre { grid-template-columns: 1fr; gap: 36px; }
+    .sobre-img { order: -1; }
+    .stats { gap: 20px; }
+    footer { flex-direction: column; text-align: center; }
+    nav a { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Raízes <span>do Cerrado</span></div>
+  <a href="#contato">Fale Conosco</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="badge">🌱 Viveiro — Região de Botucatu · SP</span>
+  <h1>Mudas com <span>raiz forte</span> para sua propriedade</h1>
+  <p>Frutíferas, nativas, ornamentais e amendoim forrageiro. Qualidade do campo direto para você.</p>
+  <a class="btn-wpp" href="https://wa.me/5514999999999?text=Olá!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20as%20mudas." target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Pedir pelo WhatsApp
+  </a>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre">
+  <div class="sobre-img reveal">
+    <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=800&q=80" alt="Mudas no viveiro">
+  </div>
+  <div class="sobre-texto reveal">
+    <p class="tag">Quem somos</p>
+    <h2>Mais de 15 anos cultivando o interior paulista</h2>
+    <p>Somos um viveiro familiar em Botucatu, especializado em mudas para pequenos e médios produtores. Cada muda sai daqui com raiz bem formada e adaptada ao nosso clima.</p>
+    <p>Atendemos produtores rurais, prefeituras, sítios e chácaras de toda a região.</p>
+    <div class="stats">
+      <div class="stat">
+        <strong>+40</strong>
+        <span>Espécies</span>
+      </div>
+      <div class="stat">
+        <strong>+500</strong>
+        <span>Clientes</span>
+      </div>
+      <div class="stat">
+        <strong>15+</strong>
+        <span>Anos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="produtos" id="produtos">
+  <div class="sec-header reveal">
+    <span class="tag">Nosso Catálogo</span>
+    <h2>O que você encontra aqui</h2>
+  </div>
+  <div class="grid-produtos">
+    <div class="card-produto reveal">
+      <img src="https://images.unsplash.com/photo-1599598425947-5202edd56fdb?w=600&q=80" alt="Frutíferas">
+      <div class="card-produto-body">
+        <h3>🍊 Frutíferas</h3>
+        <p>Laranja, limão, mexerica, manga, goiaba e muito mais. Mudas enxertadas e prontas para plantio.</p>
+      </div>
+    </div>
+    <div class="card-produto reveal">
+      <img src="https://images.unsplash.com/photo-1504567961542-e24d9439a724?w=600&q=80" alt="Nativas">
+      <div class="card-produto-body">
+        <h3>🌳 Nativas do Cerrado</h3>
+        <p>Ipê, aroeira, angico, cedro. Ideais para APP, reserva legal e reflorestamento.</p>
+      </div>
+    </div>
+    <div class="card-produto reveal">
+      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Ornamentais">
+      <div class="card-produto-body">
+        <h3>🌺 Ornamentais</h3>
+        <p>Plantas para jardins, praças e paisagismo. Grande variedade de espécies tropicais.</p>
+      </div>
+    </div>
+    <div class="card-produto reveal">
+      <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4e7?w=600&q=80" alt="Amendoim forrageiro">
+      <div class="card-produto-body">
+        <h3>🌿 Amendoim Forrageiro</h3>
+        <p>Cobertura de solo, pastagem e controle de erosão. Entregamos em mudas ou estolões.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diferenciais">
+  <div class="sec-header reveal">
+    <span class="tag">Por que escolher</span>
+    <h2>Nossos diferenciais</h2>
+  </div>
+  <div class="grid-dif">
+    <div class="dif-item reveal">
+      <div class="dif-icon">🚚</div>
+      <div>
+        <h4>Entrega na região</h4>
+        <p>Levamos até sua propriedade em toda a região de Botucatu e cidades vizinhas.</p>
+      </div>
+    </div>
+    <div class="dif-item reveal">
+      <div class="dif-icon">🌱</div>
+      <div>
+        <h4>Mudas saudáveis</h4>
+        <p>Todas as mudas são produzidas no viveiro, sem intermediários, com controle fitossanitário.</p>
+      </div>
+    </div>
+    <div class="dif-item reveal">
+      <div class="dif-icon">💬</div>
+      <div>
+        <h4>Atendimento direto</h4>
+        <p>Fale diretamente com quem planta. Orientamos na escolha da espécie certa para seu terreno.</p>
+      </div>
+    </div>
+    <div class="dif-item reveal">
+      <div class="dif-icon">💰</div>
+      <div>
+        <h4>Preço justo</h4>
+        <p>Produzimos aqui, então o preço é direto do produtor. Pedidos em quantidade têm desconto especial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contato">
+  <h2>Pronto para plantar?</h2>
+  <p>Mande uma mensagem no WhatsApp e receba nossa lista de mudas disponíveis com preços.</p>
+  <a class="btn-wpp" href="https://wa.me/5514999999999?text=Olá!%20Quero%20ver%20a%20lista%20de%20mudas%20disponíveis." target="_blank">
+    <svg viewBox="0 0 24 24" fill="#fff" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Chamar no WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Raízes <span>do Cerrado</span></div>
+  <p>📍 Botucatu – SP &nbsp;|&nbsp; (14) 9 9999-9999</p>
+  <p>© 2025 Viveiro Raízes do Cerrado</p>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+
+</body>
+</html>
