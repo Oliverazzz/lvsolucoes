@@ -43,14 +43,9 @@
   ];
 
   const PROJECTS = [
-    { title: 'LP para Lançamento Infoproduto', tags: 'Landing Page · Copy · Design', stat: '+215% Conversões', a:'#4a1414', b:'#0b0b0b' },
-    { title: 'LP para Produto Físico', tags: 'Landing Page · Design', stat: '+178% Conversões', a:'#2b2b2b', b:'#0b0b0b' },
-    { title: 'LP para Mentoria Online', tags: 'Landing Page · Copy · Design', stat: '+206% Conversões', a:'#3a1414', b:'#151515' },
-    { title: 'LP para Serviço Financeiro', tags: 'Landing Page · Automação', stat: '+162% Conversões', a:'#1a1a2e', b:'#0b0b0b' },
-    { title: 'LP para Clínica de Estética', tags: 'Landing Page · Design', stat: '+190% Conversões', a:'#3a1f2e', b:'#0b0b0b' },
-    { title: 'LP para Curso Online', tags: 'Landing Page · Copy', stat: '+230% Conversões', a:'#4a1414', b:'#242424' },
-    { title: 'LP para E-commerce de Moda', tags: 'Landing Page · Automação', stat: '+145% Conversões', a:'#2b1a1a', b:'#0b0b0b' },
-    { title: 'LP para Consultoria Jurídica', tags: 'Landing Page · Copy · Design', stat: '+170% Conversões', a:'#242424', b:'#0b0b0b' },
+    { title: 'LP para Lançamento Infoproduto', tags: 'Landing Page • Catálogo • Design', stat: '+215% Conversões', img: 'img/agroarte.webp', link: 'https://agroartelp.netlify.app/' },
+    { title: 'LP para Produto Físico', tags: 'Landing Page • Design', stat: '+178% Conversões', img: 'img/mudassantos.webp', link: 'https://mudassantos.netlify.app/' },
+    { title: 'LP para Mentoria Online', tags: 'Landing Page • Sistema • Design', stat: '+206% Conversões', img: 'img/sitedemonstracao.webp', link: '' },
   ];
 
   const TESTIMONIALS = [
@@ -128,15 +123,16 @@
   function renderPortfolio(){
     const track = $('#portfolioTrack');
     track.innerHTML = PROJECTS.map(p => `
-      <article class="project-card">
-        <div class="project-card__media" style="--tint-a:${p.a};--tint-b:${p.b}">
+      <a href="${p.link}" class="project-card" target="_blank" rel="noopener">
+        <div class="project-card__media">
+          <img src="${p.img}" alt="${p.title}" class="project-card__img">
           <span class="project-card__badge">${p.stat}</span>
         </div>
         <div class="project-card__body">
           <h3 class="project-card__title">${p.title}</h3>
           <p class="project-card__tags">${p.tags}</p>
         </div>
-      </article>
+      </a>
     `).join('');
 
     const dots = $('#portfolioDots');

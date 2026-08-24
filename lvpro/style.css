@@ -324,14 +324,17 @@ button{ font-family:inherit; cursor:pointer; }
   scroll-snap-align:start; flex-shrink:0; width:270px;
   border-radius:var(--radius-md); overflow:hidden; background:var(--white);
   box-shadow:var(--shadow-card); transition:transform .35s var(--ease), box-shadow .35s var(--ease);
-  display:flex; flex-direction:column;
+  display:flex; flex-direction:column; text-decoration:none;
 }
 .project-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-card-hover); }
 .project-card__media{
   aspect-ratio:4/3; position:relative; display:flex; align-items:flex-end; padding:16px;
-  background:linear-gradient(150deg, var(--tint-a,#3a1414), var(--tint-b,#0b0b0b));
+  background:#0B0B0B;
 }
-.project-card__media::after{ content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.55), transparent 55%); }
+.project-card__img{
+  position:absolute; inset:0; width:auto; height:auto; object-fit:cover; z-index:0;
+}
+.project-card__media::after{ content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.7), transparent 60%); z-index:0; }
 .project-card__badge{
   position:relative; z-index:1; background:rgba(227,29,36,0.92); color:var(--white);
   font-size:0.72rem; font-weight:700; padding:5px 10px; border-radius:100px;
