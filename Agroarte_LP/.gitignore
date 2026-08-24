@@ -1,0 +1,35 @@
+# Segredos e credenciais — NUNCA commitar
+.env
+.env.*
+.env.local
+.env.production
+*.key
+*.pem
+*.p12
+service-account*.json
+firebase-adminsdk*.json
+google-credentials*.json
+
+# Ambiente virtual Python (zIA)
+.venv/
+venv/
+__pycache__/
+
+# Dependências Node (se vier a usar)
+node_modules/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build
+dist/
+.firebase/
+
+# Pasta specdriven
+spec-driven

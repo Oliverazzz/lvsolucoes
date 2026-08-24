@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com https://apis.google.com https://*.firebaseapp.com 'unsafe-inline'; connect-src 'self' https://*.googleapis.com wss://*.firebaseio.com https://*.firebaseapp.com; frame-src 'self' https://accounts.google.com https://*.firebaseapp.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
+  <!-- SEO Meta Tags -->
+  <title>Agroarte Agropecuária | Pet Shop, Selaria e Insumos em Herculândia - SP</title>
+  <meta name="description" content="Tudo para o seu pet, sítio ou fazenda em Herculândia e região. Rações, medicamentos veterinários, selaria e ferramentas com atendimento especializado.">
+  <meta name="keywords" content="agropecuaria herculandia, pet shop herculandia, racoes herculandia, selaria herculandia, ferramentas rurais, farmacia veterinaria">
+  
+  <!-- Fontes Premium -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=3">
+  <script src="../javascript/script.js" defer></script>
+  <script type="module" src="../javascript/auth.js"></script>
+  
+</head>
+<body>
+
+  <!-- NAVEGAÇÃO -->
+  <nav>
+    <div class="logo-container">
+      <a href="#" class="logo-badge">
+        <img src="../img/logo.webp" alt="Agroarte Agropecuária">
+      </a>
+      
+    </div>
+    <a href="#contato" class="nav-btn">Fale Conosco</a>
+    <a class="user-login" id="user-btn">
+      <img src="https://www.svgrepo.com/show/532362/user.svg" alt="Login">
+    </a>
+    <div id="login-modal" hidden>
+      <div class="modal-backdrop" data-login-close></div>
+      <div class="auth-shell">
+        <div class="form auth-form google-only-form">
+          <div class="flex-row" style="margin-bottom: 5px; justify-content: space-between; width: 100%;">
+            <span style="font-weight: 600; color: #151717; font-family: 'Montserrat', sans-serif;">Acesse sua Conta</span>
+            <span id="fechar" data-login-close style="cursor: pointer; font-size: 1.5rem; font-weight: bold; color: var(--text-muted); line-height: 1;">&times;</span>
+          </div>
+
+          <div class="google-only-body">
+            <div class="google-only-icon">
+              <img src="../img/logo.webp" alt="Agroarte" style="width: 64px; height: 64px; object-fit: contain; border-radius: 12px;">
+            </div>
+            <h3 class="google-only-title">Bem-vindo à Agroarte</h3>
+            <p class="google-only-subtitle">Entre com sua conta Google para acessar sua área de cliente com segurança e praticidade.</p>
+          </div>
+
+          <p id="error-message" style="display: none; color: #f14336; font-size: 13px; text-align: center; margin-top: 5px; font-weight: 600;"></p>
+
+          <button class="btn google google-only-btn" type="button" id="btn-google">
+            <svg version="1.1" width="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve">
+              <path style="fill:#FBBB00;" d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456C103.821,274.792,107.225,292.797,113.47,309.408z"></path>
+              <path style="fill:#518EF8;" d="M507.527,208.176C510.467,223.662,512,239.655,512,256c0,18.328-1.927,36.206-5.598,53.451c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"></path>
+              <path style="fill:#28B446;" d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z"></path>
+              <path style="fill:#F14336;" d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0C318.115,0,375.068,22.126,419.404,58.936z"></path>
+            </svg>
+            <span>Continuar com Google</span>
+          </button>
+
+          <p class="google-only-terms">Ao entrar, você concorda com os nossos termos de uso e política de privacidade.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL DE CONTA LOGADA -->
+    <div id="account-modal" hidden>
+      <div class="modal-backdrop" data-account-close></div>
+      <div class="auth-shell">
+        <div class="form auth-form google-only-form">
+          <div class="flex-row" style="margin-bottom: 5px; justify-content: space-between; width: 100%;">
+            <span style="font-weight: 600; color: #151717; font-family: 'Montserrat', sans-serif;">Minha Conta</span>
+            <span data-account-close style="cursor: pointer; font-size: 1.5rem; font-weight: bold; color: var(--text-muted); line-height: 1;">&times;</span>
+          </div>
+
+          <div class="google-only-body">
+            <div class="account-avatar-wrapper">
+              <img id="account-avatar" src="" alt="Foto de perfil" class="account-avatar" referrerpolicy="no-referrer">
+              <div class="account-avatar-fallback" id="account-avatar-fallback">?</div>
+            </div>
+            <h3 class="google-only-title" id="account-name">Usuário</h3>
+            <p class="google-only-subtitle" id="account-email"></p>
+          </div>
+
+          <a href="./html/admin.html" class="btn google-only-btn account-btn-admin" id="btn-go-admin" style="display: none; text-decoration: none; margin-top: 16px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/>
+            </svg>
+            <span>Painel Admin</span>
+          </a>
+
+          <button class="btn google-only-btn account-btn-switch" type="button" id="btn-switch-account" style="margin-top: 8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+            <span>Trocar conta</span>
+          </button>
+
+          <button class="btn google-only-btn account-btn-logout" type="button" id="btn-logout">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+            </svg>
+            <span>Sair da conta</span>
+          </button>
+
+          <p class="google-only-terms">Sua sessão é gerenciada com segurança pelo Google.</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-tag">
+      <span class="hero-tag-line"></span>
+      <span class="hero-tag-text">Tradição no Campo &amp; Lar</span>
+      <span class="hero-tag-line"></span>
+    </div>
+    <h1>Tudo para o seu sítio, fazenda e pet em <span>Herculândia</span></h1>
+    <p>Rações, medicamentos veterinários, selaria e ferramentas com atendimento especializado de quem é parceiro do homem do campo.</p>
+    
+    <a class="btn-action" href="https://wa.me/5514996336181?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chamar no WhatsApp (Orçamento na Hora)
+    </a>
+
+    <div class="hero-badges-container">
+      <div class="hero-badge-item badge-local">
+        <svg class="badge-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span class="badge-text">Centro - Herculândia</span>
+      </div>
+      <div class="hero-badge-item badge-entrega">
+        <svg class="badge-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13"></rect>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+          <circle cx="5.5" cy="18.5" r="2.5"></circle>
+          <circle cx="18.5" cy="18.5" r="2.5"></circle>
+        </svg>
+        <span class="badge-text">Entrega Rápida RURAL &amp; URBANA</span>
+      </div>
+      <div class="hero-badge-item badge-cartao">
+        <svg class="badge-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+          <line x1="1" y1="10" x2="23" y2="10"></line>
+        </svg>
+        <span class="badge-text">Parcelamento Sem Juros</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS EM DESTAQUE (Carregado dinamicamente via Firestore) -->
+  <section class="sec-container reveal" id="destaques-section" style="display: none; padding-bottom: 40px; background-color: var(--white);">
+    <div class="sec-header">
+      <span class="tag">Mais Procurados</span>
+      <h2>Produtos em Destaque</h2>
+      <p>Confira os itens mais solicitados e ofertas imperdíveis em nossa loja.</p>
+    </div>
+    
+    <div class="premium-slider-wrapper" id="destaques-slider-wrapper">
+      <button class="slider-arrow prev" id="btn-dest-prev" aria-label="Anterior">❮</button>
+      <button class="slider-arrow next" id="btn-dest-next" aria-label="Próximo">❯</button>
+      
+      <div class="premium-slider-container">
+        <div class="catalogo-grid premium-slider-track" id="destaques-grid" style="max-width: 100%; margin: 0 auto; display: flex; gap: 24px;">
+          <!-- Populados via JS -->
+        </div>
+      </div>
+      <div class="slider-dots" id="destaques-slider-dots"></div>
+    </div>
+    
+    <!-- Botão Todos os Produtos (Abaixo dos destaques) -->
+    <div style="text-align: center; margin-top: 32px; animation: fadeInUp 0.8s ease both;">
+      <a href="./html/catalogo.html" class="btn-action" style="background: var(--primary); border: 2px solid var(--accent); color: var(--white); box-shadow: 0 10px 30px rgba(27, 77, 62, 0.25); text-decoration: none;">
+        Ver Todos os Produtos
+      </a>
+    </div>
+  </section>
+
+  <!-- DEPARTAMENTOS / PRODUTOS -->
+  <section class="sec-container reveal categorias" id="produtos">
+    <div class="sec-header">
+      <span class="tag">Nosso Catálogo</span>
+      <h2>Tudo o que você precisa em um só lugar</h2>
+      <p>Trabalhamos com marcas líderes do mercado nacional e produtos certificados, garantindo durabilidade e saúde para seus animais.</p>
+    </div>
+    
+    <div class="premium-slider-wrapper" id="categorias-slider-wrapper">
+      <button class="slider-arrow prev" id="btn-cat-prev" aria-label="Anterior">❮</button>
+      <button class="slider-arrow next" id="btn-cat-next" aria-label="Próximo">❯</button>
+      
+      <div class="premium-slider-container">
+        <div class="grid-deps premium-slider-track" id="categorias-slider-track">
+          
+          <!-- Card Pet & Rações -->
+          <div class="card-dep" data-category="pet" tabindex="0" role="button">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop" alt="Pet Shop e Rações">
+              <div class="card-icon-badge">🐾</div>
+            </div>
+            <div class="card-body">
+              <h3>Tudo para seu Pet</h3>
+              <p>Marcas consagradas (Premier, Golden, Special Dog e outras). Nutrição completa de qualidade para cães, gatos, aves e cavalos.</p>
+            </div>
+            <div class="card-dep-click-indicator">→</div>
+          </div>
+
+          <!-- Card Farmácia Veterinária -->
+          <div class="card-dep" data-category="farmacia" tabindex="0" role="button">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=800&auto=format&fit=crop" alt="Medicamentos Veterinários">
+              <div class="card-icon-badge">💊</div>
+            </div>
+            <div class="card-body">
+              <h3>Farmácia Veterinária</h3>
+              <p>Vacinas, vermífugos, antibióticos e suplementos de alto padrão para manter a saúde dos animais rurais e domésticos em dia.</p>
+            </div>
+            <div class="card-dep-click-indicator">→</div>
+          </div>
+
+          <!-- Card Selaria e Moda Country -->
+          <div class="card-dep" data-category="selaria" tabindex="0" role="button">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1599427670731-979de87714ed?q=80&w=800&auto=format&fit=crop" alt="Selaria e Vestuário">
+              <div class="card-icon-badge">🐎</div>
+            </div>
+            <div class="card-body">
+              <h3>Selaria & Moda Country</h3>
+              <p>Botas de couro legítimo, chapéus, cintos, fivelas, cabeçadas e arreios de fabricação impecável para o peão e para o dia a dia.</p>
+            </div>
+            <div class="card-dep-click-indicator">→</div>
+          </div>
+
+          <!-- Card Ferramentas -->
+          <div class="card-dep" data-category="ferramentas" tabindex="0" role="button">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1586864387789-628af9feed72?q=80&w=800&auto=format&fit=crop" alt="Ferramentas e Insumos">
+              <div class="card-icon-badge">🛠️</div>
+            </div>
+            <div class="card-body">
+              <h3>Ferramentas em geral</h3>
+              <p>Tudo para construção de cercas, manutenções e para o dia-a-dia no campo ou em casa.</p>
+            </div>
+            <div class="card-dep-click-indicator">→</div>
+          </div>
+          
+
+          <!-- Card Insumos -->
+          <div class="card-dep" data-category="insumos" tabindex="0" role="button">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800&auto=format&fit=crop" alt="Insumos e Plantio">
+              <div class="card-icon-badge">🌱</div>
+            </div>
+            <div class="card-body">
+              <h3>Insumos & Plantio</h3>
+              <p>Sementes de alta genética, fertilizantes e defensivos essenciais para garantir um estabelecimento de cultura vigoroso.</p>
+            </div>
+            <div class="card-dep-click-indicator">→</div>
+          </div>
+
+
+          <!-- Card Utilidades -->
+          <div class="card-dep" data-category="utilidades" tabindex="0" role="button">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop" alt="Utilidades para Casa">
+              <div class="card-icon-badge">🏡</div>
+            </div>
+            <div class="card-body">
+              <h3>Utilidades para casa</h3>
+              <p>Soluções inteligentes para a manutenção, organização e cuidado do seu lar. Garanta mais praticidade no dia a dia com produtos de qualidade que facilitam a sua rotina.</p>
+            </div>
+            <div class="card-dep-click-indicator">→</div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-dots" id="categorias-slider-dots"></div>
+    </div>
+
+  </section>
+
+  <!-- SOBRE NÓS E HUMANIZAÇÃO -->
+  <section class="sec-container sobre reveal" id="sobre">
+    <div class="sobre-img-container">
+      <!-- Imagem humanizada que representa a Agroarte -->
+      <img src="../img/sobre.png" alt="Atendimento no campo da Agroarte">
+    </div>
+    <div class="sobre-texto">
+      <h2>A parceria ideal para o produtor e a família de <span>Herculândia</span></h2>
+      <p>Na <strong>Agroarte Agropecuária</strong>, sob a gestão atenciosa de <strong>Fernando Artero</strong>, entendemos que o homem do campo e os pets de casa merecem dedicação máxima.</p>
+      <p>Nascemos para suprir a demanda de quem precisa de rações de confiança, materiais duráveis e medicamentos legítimos sem burocracia, sempre prestando um atendimento técnico e honesto.</p>
+      
+      <div class="diferenciais-mini">
+        <div class="dif-mini-item">
+          <div class="dif-mini-icon">✓</div>
+          <div class="dif-mini-text">
+            <h4>Direção Familiar</h4>
+            <span>Fernando Artero</span>
+          </div>
+        </div>
+        <div class="dif-mini-item">
+          <div class="dif-mini-icon">✓</div>
+          <div class="dif-mini-text">
+            <h4>Produtos de Origem</h4>
+            <span>100% Originais</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="sec-container diferenciais-section reveal">
+    <div class="sec-header">
+      <span class="tag">Diferenciais</span>
+      <h2>Por que escolher a Agroarte?</h2>
+      <p>Garantimos a melhor experiência de compra focando nas necessidades reais de quem produz e de quem ama seus animais.</p>
+    </div>
+    
+    <div class="grid-dif">
+      
+      <div class="card-dif">
+        <div class="icon-dif-wrapper">
+          <img src="./img/icone-entrega-premium.jpg" alt="icon-entrega">
+        </div>
+        <h3>Entrega Rápida</h3>
+        <p>Levamos suas rações ou insumos até sua residência ou direto no seu sítio e fazenda com rapidez.</p>
+      </div>
+
+      <div class="card-dif">
+        <div class="icon-dif-wrapper">
+          <img src="./img/icone-suporte-premium.jpg" alt="icon-suporte">
+        </div>
+        <h3>Suporte Especializado</h3>
+        <p>Indicações corretas e técnicas para sementes, dosagem de remédios e escolha das melhores marcas.</p>
+      </div>
+
+      <div class="card-dif">
+        <div class="icon-dif-wrapper">
+          <img src="./img/icone-preco-premium.jpg" alt="icon-preco">
+        </div>
+        <h3>Preço Justo</h3>
+        <p>Negociação facilitada direto com os proprietários. Descontos especiais para compras em quantidade.</p>
+      </div>
+
+      <div class="card-dif">
+        <div class="icon-dif-wrapper">
+          <img src="./img/icone-garantia-premium.jpg" alt="icon-garantia">
+        </div>
+        <h3>Garantia Total</h3>
+        <p>Todos os medicamentos e produtos possuem certificação e procedência garantida do fabricante.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="galeria-section" id="galeria">
+    <div class="sec-header reveal">
+      <span class="tag">Nossa Loja</span>
+      <h2>Conheça a <span>Agroarte</span></h2>
+      <p>Um espaço completo, organizado e preparado para atender você e seus animais.</p>
+    </div>
+    <div class="gal-grid reveal">
+      <div class="gal-item g1"><span>Nossa loja</span>
+        <img src="./img/fachadaloja.png" alt="Fachada da Agroarte" loading="lazy">
+      </div>
+      <div class="gal-item g2"><span>Jardinagem</span>
+        <img src="./img/galeria1.png" alt="Campo" loading="lazy">
+      </div>
+      <div class="gal-item g3"><span>Petshop</span>
+        <img src="./img/galeria2.png" alt="Farmácia Veterinária" loading="lazy">
+      </div>
+      <div class="gal-item g4"><span>Selaria</span>
+        <img src="../img/galeria3.png" alt="Selaria" loading="lazy">
+      </div>
+      <div class="gal-item g4"><span>Country</span>
+        <img src="../img/galeria4.png" alt="Selaria" loading="lazy">
+      </div>
+      <div class="gal-item g5"><span>Atendimento Especializado</span>
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop" alt="Campo Agroarte" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="sec-container depoimentos reveal">
+    <div class="sec-header">
+      <span class="tag">Depoimentos</span>
+      <h2>O que dizem os nossos clientes</h2>
+      <p>Quem compra na Agroarte reconhece a qualidade dos nossos produtos e o carinho do nosso atendimento.</p>
+    </div>
+
+    <!-- Story de avaliações do Firestore — uma por vez, 6s cada, ordem aleatória -->
+    <div id="avaliacoes-dinamicas" style="margin-top: 30px;"></div>
+
+    <!-- Formulário de Avaliação -->
+    <div class="catalogo-wrapper" style="max-width: 600px; margin: 40px auto 0 auto; background: var(--bg-cream); border: 2px dashed var(--accent);">
+      <h3 style="text-align: center; color: var(--primary); font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 12px;">Deixe sua Avaliação</h3>
+      <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Compartilhe sua experiência de compra na Agroarte.</p>
+      <form id="form-avaliacao">
+        <div class="admin-form-group" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; align-items: center;">
+          <label style="font-size: 0.85rem; font-weight: 600;">Sua Nota</label>
+          <div id="star-rating" style="display: flex; gap: 8px; font-size: 1.8rem; cursor: pointer; color: #ccc;">
+            <span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span>
+          </div>
+        </div>
+        <div class="admin-form-group" style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px;">
+          <label style="font-size: 0.85rem; font-weight: 600;" for="aval-texto">Sua Opinião</label>
+          <textarea id="aval-texto" class="admin-textarea" style="background: var(--white);" rows="3" placeholder="Ex: Ótimo atendimento, produtos de primeira..." required></textarea>
+        </div>
+        <button type="submit" class="btn-admin-submit" id="btn-submit-aval">Enviar Avaliação</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- NOVO: PERGUNTAS FREQUENTES (FAQ) -->
+  <section class="sec-container faq-section reveal">
+    <div class="sec-header">
+      <span class="tag">Dúvidas Frequentes</span>
+      <h2>Perguntas Frequentes</h2>
+      <p>Respondemos de antemão as dúvidas mais comuns dos nossos clientes para facilitar sua jornada.</p>
+    </div>
+    
+    <div class="faq-wrapper">
+      
+      <div class="faq-item">
+        <button class="faq-trigger">
+          Vocês entregam em sítios e fazendas (zona rural)?
+          <span>+</span>
+        </button>
+        <div class="faq-content">
+          <p>Sim! Possuímos logística própria para realizar entregas tanto no perímetro urbano de Herculândia quanto nas fazendas, chácaras e sítios de toda a região sob consulta rápida de rota.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger">
+          Quais marcas de ração vocês trabalham?
+          <span>+</span>
+        </button>
+        <div class="faq-content">
+          <p>Trabalhamos com marcas líderes que garantem a nutrição perfeita, tais como Premier, Golden, Special Dog e diversas rações específicas de engorda e crescimento para cavalos, aves e bovinos.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger">
+          Como posso fazer um pedido ou solicitar orçamento?
+          <span>+</span>
+        </button>
+        <div class="faq-content">
+          <p>É muito simples: clique em qualquer botão do WhatsApp em nosso site. Você será direcionado para conversar diretamente conosco, tirar suas dúvidas e passaremos o preço na hora de maneira personalizada!</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger">
+          Vocês aceitam cartão e parcelamento?
+          <span>+</span>
+        </button>
+        <div class="faq-content">
+          <p>Sim, aceitamos todas as bandeiras de cartão de crédito e débito, PIX, dinheiro e possuímos condições exclusivas e parcelamento facilitado para produtores rurais.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final" id="contato">
+    <h2>Pronto para ser parceiro da <span>Agroarte</span>?</h2>
+    <p>Mande uma mensagem no WhatsApp agora mesmo, tire suas dúvidas com nossos representantes e receba nosso preço de produtor direto.</p>
+    <div class="cta-buttons">
+      <a class="btn-action" href="https://wa.me/5514996336181?text=Olá!%20Quero%20falar%20com%20a%20equipe%20da%20Agroarte%20e%20fazer%20um%20pedido." target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chamar Proprietários no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="footer-grid">
+
+      <!-- Coluna 1: Marca -->
+      <div class="footer-brand">
+        <div class="footer-logo-text">Agroarte <span>Agropecuária</span></div>
+        <p>A força do comércio local de Herculândia, unindo qualidade em produtos rurais, pet shop, selaria e ferramentas com atendimento próximo e caloroso.</p>
+        <div class="footer-socials" style="margin-top: 20px;">
+          <a href="https://www.facebook.com/AgroarteAgropecuaria/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/5514996336181" target="_blank" rel="noopener noreferrer" class="social-icon" title="WhatsApp">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/agroarteherc/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna 2: Links Rápidos -->
+      <div class="footer-col">
+        <h4>Links Rápidos</h4>
+        <ul class="footer-links">
+          <li><a href="#produtos">Catálogo de Produtos</a></li>
+          <li><a href="#sobre">Quem Somos</a></li>
+          <li><a href="#contato">Fale Conosco</a></li>
+          <li><a href="./privacidade.html">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Contato -->
+      <div class="footer-col">
+        <h4>Contato &amp; Visita</h4>
+        <div class="footer-info">
+          <div class="footer-info-item">
+            <span class="footer-info-icon">
+              <img src="../img/mapfooter.svg" alt="lugar">
+            </span>
+            <div><strong>Rua Brigadeiro Tobias, 284</strong><br>Centro — Herculândia/SP</div>
+          </div>
+          <div class="footer-info-item">
+            <span class="footer-info-icon">
+              <img src="../img/phonefooter.svg" alt="telefone">
+            </span>
+            <div><strong>(14) 9636-9132</strong></div>
+          </div>
+          <div class="footer-info-item">
+            <span class="footer-info-icon">
+              <img src="../img/clockfooter.svg" alt="horario">
+            </span>
+            <div><strong>Seg – Sex:</strong> 08h às 18h<br><strong>Sábado:</strong> 08h às 12h</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Agroarte Agropecuária Ltda. — Todos os direitos reservados. CNPJ: 44.670.851/0001-17</p>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DESTAQUE DO CATÁLOGO (FORA DA NAV) -->
+  <a href="./html/catalogo.html" class="floating-catalog-btn" title="Ver Catálogo Completo de Produtos">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="21" r="1"></circle>
+      <circle cx="20" cy="21" r="1"></circle>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+    <span>Ver Catálogo</span>
+  </a>
+
+</body>
+</html>

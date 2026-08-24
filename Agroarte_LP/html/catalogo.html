@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com https://apis.google.com https://*.firebaseapp.com 'unsafe-inline'; connect-src 'self' https://*.googleapis.com wss://*.firebaseio.com https://*.firebaseapp.com; frame-src 'self' https://accounts.google.com https://*.firebaseapp.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
+  <title>Catálogo de Produtos | Agroarte Agropecuária</title>
+  <meta name="description" content="Explore o catálogo completo de rações, medicamentos, selaria e ferramentas da Agroarte em Herculândia-SP.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=3">
+  
+
+</head>
+<body>
+
+  <!-- NAVEGAÇÃO -->
+  <nav>
+    <div class="logo-container">
+      <a href="../index.html" class="logo-badge">
+        <img src="../img/logo.webp" alt="Agroarte Agropecuária">
+      </a>
+    </div>
+    <a href="../index.html" class="nav-btn">← Voltar ao Site</a>
+  </nav>
+
+  <!-- CATÁLOGO -->
+  <main class="catalogo-container">
+    <div class="catalogo-page-header">
+      <div>
+        <h2>Catálogo Completo</h2>
+      </div>
+      <p>Pesquise em tempo real ou filtre por categoria os produtos disponíveis na nossa loja física.</p>
+    </div>
+
+    <div class="catalogo-wrapper">
+      <div class="catalogo-control-bar">
+        <div class="search-box">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="catalogo-busca" placeholder="Pesquisar por nome ou descrição de produto...">
+        </div>
+        
+        <div class="filter-pills" id="pills-container">
+          <button class="pill active" data-filter="todos">Todos</button>
+          <!-- Populados dinamicamente via Firestore -->
+        </div>
+      </div>
+
+      <!-- Área de Carregamento -->
+      <div id="loading" class="loading-container">
+        <div class="spinner"></div>
+        <p>Carregando catálogo de produtos...</p>
+      </div>
+      
+      <!-- Grid de produtos -->
+      <div class="catalogo-grid" id="catalogo-grid" style="display: none;">
+        <!-- Renderizado dinamicamente via Firestore -->
+      </div>
+    </div>
+  </main>
+
+  <!-- RODAPÉ SIMPLES -->
+  <footer style="margin-top: auto;">
+    <div class="footer-bottom" style="margin-top: 0; border-top: none; padding-top: 0;">
+      <p>© 2026 Agroarte Agropecuária Ltda. CNPJ: 44.670.851/0001-17</p>
+      <a href="./privacidade.html" class="footer-privacy-link">Política de Privacidade</a>
+    </div>
+  </footer>
+
+  <!-- Firebase Modular SDK -->
+  <script type="module" src="../javascript/catalogo.js"></script>
+</body>
+</html>
