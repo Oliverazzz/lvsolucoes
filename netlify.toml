@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/*"
+  to = "/lvpro/:splat"
+  status = 200
