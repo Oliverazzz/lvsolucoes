@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mudas Santos — A natureza mais perto de você</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="img/favicon.webp" type="image/webp">
+</head>
+<body>
+
+  <header>
+    <nav class="wrap">
+      <a class="brand" href="#top">
+        <img src="img/logo.webp" alt="Mudas Santos">
+        <span>Mudas Santos</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-gold" href="https://wa.me/5514996345797?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20as%20mudas." target="_blank" rel="noopener noreferrer">Fale conosco</a>
+        <button class="burger" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Viveiro de mudas</span>
+          <img class="logosf" src="../img/logosemfundo.webp" alt="logo sem fundo">
+          <!-- <h1><em>MUDAS</em><span>&nbsp; SANTOS</span></h1> -->
+          <p class="lead">Cultivamos mudas fortes e saudáveis — frutíferas e ornamentais — prontas para transformar seu quintal, sítio ou jardim.</p>
+          <div class="hero-location">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+              <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+            <a href="https://www.google.com/maps/search/?api=1&query=Viveiro+Mudas+Santos+Herculandia+SP" target="_blank" rel="noopener noreferrer">
+              <span>Herculândia-SP</span>
+              <img class="location-arrow" src="https://www.svgrepo.com/show/533642/arrow-up-right.svg" alt="Abrir no Google Maps">
+            </a>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#categorias">Ver catálogo</a>
+            <a class="btn btn-ghost" href="https://wa.me/5514996345797?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20as%20mudas." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>+50</strong><span>espécies cultivadas</span></div>
+            <div><strong>+10 anos</strong><span>de viveiro</span></div>
+            <div><strong>100%</strong><span>mudas de qualidade</span></div>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="hero-blob"></div>
+          <img class="hero-image" src="img/entradaviveiro.webp" alt="Foto do Viveiro Mudas Santos">
+          <img class="hero-stack-photo" src="img/outdoor.webp" alt="Mudas no viveiro">
+        </div>
+      </div>
+      <div class="wave">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,45 L1440,80 L0,80 Z" fill="#EEE5C9"/></svg>
+      </div>
+    </section>
+
+    <!-- CHAMADA PARA WHATSAPP -->
+    <section id="sobre" class="whatsapp-cta">
+      <div class="wrap whatsapp-cta-content reveal">
+        <span class="tag">Atendimento direto</span>
+        <h2>Já sabe o que quer plantar?</h2>
+        <p>Chame no WhatsApp e encontre a muda certa para o seu espaço.</p>
+        <a class="btn whatsapp-cta-button" href="https://wa.me/5514996345797?text=Ol%C3%A1!%20Quero%20saber%20qual%20muda%20%C3%A9%20ideal%20para%20o%20meu%20espa%C3%A7o." target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.198 0-.371.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar agora no WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- CATEGORIAS (MODAIS) -->
+    <section id="categorias" class="categories section-vine">
+      <svg class="vine-svg" viewBox="0 0 60 900" preserveAspectRatio="none">
+        <path class="vine-path" d="M30 0 C10 100 50 200 30 300 C10 400 50 500 30 600 C10 700 50 800 30 900" />
+      </svg>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="tag">O que cultivamos</span>
+          <h2>Categorias de mudas</h2>
+          <p>Trabalhamos com mais de 100 qualidades de frutas e plantas prontas para você. Clique nos cartões para ver as espécies e fotos.</p>
+        </div>
+        <div class="cat-grid">
+          <div class="cat-card reveal modal-trigger" data-target="modal-citricas" tabindex="0" role="button">
+            <img class="card-arrow" src="https://www.svgrepo.com/show/533642/arrow-up-right.svg" alt="arrow">
+            <div class="ico-img-container">
+              <img class="cat-ico-img" src="https://plus.unsplash.com/premium_photo-1724255955839-d3e393497283?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Frutas cítricas">
+            </div>
+            <h3>Frutas cítricas</h3>
+            <p>Diversas opções de laranjas, limões e tangerinas.</p>
+          </div>
+          <div class="cat-card reveal modal-trigger" data-target="modal-mangueiras" tabindex="0" role="button">
+            <img class="card-arrow" src="https://www.svgrepo.com/show/533642/arrow-up-right.svg" alt="arrow">
+            <div class="ico-img-container">
+              <img class="cat-ico-img" src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=400&auto=format&fit=crop" alt="Mangueiras">
+            </div>
+            <h3>Mangueiras</h3>
+            <p>Variedades nobres, do tipo bourbon à palmer.</p>
+          </div>
+          <div class="cat-card reveal modal-trigger" data-target="modal-coqueiros" tabindex="0" role="button">
+            <img class="card-arrow" src="https://www.svgrepo.com/show/533642/arrow-up-right.svg" alt="arrow">
+            <div class="ico-img-container">
+              <img class="cat-ico-img" src="../img/cococategoria.webp" alt="Coqueiros">
+            </div>
+            <h3>Coqueiros</h3>
+            <p>Espécies anãs e híbridas de alta produção.</p>
+          </div>
+          <div class="cat-card reveal modal-trigger" data-target="modal-diversas" tabindex="0" role="button">
+            <img class="card-arrow" src="https://www.svgrepo.com/show/533642/arrow-up-right.svg" alt="arrow">
+            <div class="ico-img-container">
+              <img class="cat-ico-img" src="../img/frutas.webp" alt="Frutíferas diversas">
+            </div>
+            <h3>Frutíferas diversas</h3>
+            <p>Mais de 70 tipos de frutas exóticas e nativas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAIS DE CATÁLOGO -->
+    <div id="modal-citricas" class="catalog-modal">
+      <div class="catalog-modal-content">
+        <button class="close-modal" aria-label="Fechar">&times;</button>
+        <div class="list-card-header">
+          <div class="modal-ico-img-container">
+            <img class="modal-ico-img" src="https://plus.unsplash.com/premium_photo-1724255955839-d3e393497283?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Frutas cítricas">
+          </div>
+          <h3>Frutas cítricas</h3>
+        </div>
+        <ul class="species-list hover-preview-list col-2">
+          <li data-img="https://plus.unsplash.com/premium_photo-1724255955839-d3e393497283?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="species-item">Laranja pêra rio</li>
+          <li data-img="" class="species-item">Laranja crutale</li>
+          <li data-img="" class="species-item">Laranja champanhe</li>
+          <li data-img="" class="species-item">Laranja lima</li>
+          <li data-img="" class="species-item">Lima da Pérsia</li>
+          <li data-img="" class="species-item">Laranja sanguínea</li>
+          <li data-img="" class="species-item">Laranja açúcar</li>
+          <li data-img="" class="species-item">Laranja seleta</li>
+          <li data-img="" class="species-item">Laranja Bahia</li>
+          <li data-img="" class="species-item">Laranja valência</li>
+          <li data-img="" class="species-item">Laranja cidra</li>
+          <li data-img="" class="species-item">Kinkan verde doce</li>
+          <li data-img="" class="species-item">Ponkan</li>
+          <li data-img="" class="species-item">Tangerina</li>
+          <li data-img="" class="species-item">Decopon (Ponkan sem semente)</li>
+          <li data-img="" class="species-item">Morcote</li>
+          <li data-img="" class="species-item">Mexerica rio (cheirosa)</li>
+          <li data-img="" class="species-item">Tangerina cravo</li>
+          <li data-img="" class="species-item">Limão tayti</li>
+          <li data-img="" class="species-item">Limão galego</li>
+          <li data-img="https://images.unsplash.com/photo-1590502593747-42a996133562?q=80&w=400&auto=format&fit=crop" class="species-item">Limão Siciliano</li>
+          <li data-img="" class="species-item">Limão rosa (cravo)</li>
+          <li data-img="" class="species-item">Limão caviar</li>
+          <li data-img="" class="species-item">Limão Uruguai</li>
+          <li data-img="" class="species-item">Limão imperial</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="modal-mangueiras" class="catalog-modal">
+      <div class="catalog-modal-content">
+        <button class="close-modal" aria-label="Fechar">&times;</button>
+        <div class="list-card-header">
+          <div class="modal-ico-img-container">
+            <img class="modal-ico-img" src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=400&auto=format&fit=crop" alt="Mangueiras">
+          </div>
+          <h3>Mangueiras</h3>
+        </div>
+        <ul class="species-list hover-preview-list col-2">
+          <li data-img="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=400&auto=format&fit=crop" class="species-item">Bourbon</li>
+          <li data-img="" class="species-item">Espada</li>
+          <li data-img="" class="species-item">Coquinho</li>
+          <li data-img="" class="species-item">Haden</li>
+          <li data-img="" class="species-item">Keitt</li>
+          <li data-img="" class="species-item">Tommy atikins</li>
+          <li data-img="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=400&auto=format&fit=crop" class="species-item">Palmer</li>
+          <li data-img="" class="species-item">Coração de boi</li>
+          <li data-img="" class="species-item">Manteiga</li>
+          <li data-img="" class="species-item">Rosa</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="modal-coqueiros" class="catalog-modal">
+      <div class="catalog-modal-content">
+        <button class="close-modal" aria-label="Fechar">&times;</button>
+        <div class="list-card-header">
+          <div class="modal-ico-img-container">
+            <img class="modal-ico-img" src="../img/cococategoria.webp" alt="Coqueiros">
+          </div>
+          <h3>Coqueiros</h3>
+        </div>
+        <ul class="species-list hover-preview-list col-2">
+          <li data-img="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?q=80&w=400&auto=format&fit=crop" class="species-item">Côco anão precoce</li>
+          <li data-img="" class="species-item">Côco híbrido</li>
+          <li data-img="" class="species-item">Côco praiano</li>
+          <li data-img="" class="species-item">Côco amarelo</li>
+          <li data-img="" class="species-item">Buriti</li>
+          <li data-img="" class="species-item">Butiá</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="modal-diversas" class="catalog-modal">
+      <div class="catalog-modal-content">
+        <button class="close-modal" aria-label="Fechar">&times;</button>
+        <div class="list-card-header">
+          <div class="modal-ico-img-container">
+            <img class="modal-ico-img" src="../img/frutas.webp" alt="Frutíferas diversas">
+          </div>
+          <h3>Frutíferas diversas</h3>
+        </div>
+        <ul class="species-list hover-preview-list col-4">
+          <li data-img="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=400&auto=format&fit=crop" class="species-item">Acerola (doce, azeda)</li>
+          <li data-img="" class="species-item">Atemóia</li>
+          <li data-img="" class="species-item">Abacate (várias qualidades)</li>
+          <li data-img="" class="species-item">Abiu roxo</li>
+          <li data-img="" class="species-item">Abiu amarelo</li>
+          <li data-img="" class="species-item">Abricó</li>
+          <li data-img="" class="species-item">Ameixa nêspera</li>
+          <li data-img="" class="species-item">Ameixa roxa</li>
+          <li data-img="" class="species-item">Azeitona do ceilão</li>
+          <li data-img="" class="species-item">Azeitona oliveira</li>
+          <li data-img="" class="species-item">Amora comum</li>
+          <li data-img="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=400&auto=format&fit=crop" class="species-item">Amora gigante</li>
+          <li data-img="" class="species-item">Araçá</li>
+          <li data-img="" class="species-item">Bacupari</li>
+          <li data-img="" class="species-item">Banana</li>
+          <li data-img="" class="species-item">Cabeludinha</li>
+          <li data-img="" class="species-item">Cacau</li>
+          <li data-img="" class="species-item">Cupuaçu</li>
+          <li data-img="" class="species-item">Cajá-manga</li>
+          <li data-img="" class="species-item">Caju (vermelho, amarelo)</li>
+          <li data-img="" class="species-item">Caqui (várias qualidades)</li>
+          <li data-img="" class="species-item">Carambola (doce, azeda)</li>
+          <li data-img="" class="species-item">Castanha do Pará</li>
+          <li data-img="" class="species-item">Castanha macadâmia</li>
+          <li data-img="" class="species-item">Castanha portuguesa</li>
+          <li data-img="" class="species-item">Calabura</li>
+          <li data-img="" class="species-item">Cajá</li>
+          <li data-img="" class="species-item">Cereja</li>
+          <li data-img="" class="species-item">Camu-camu</li>
+          <li data-img="" class="species-item">Cravo da índia</li>
+          <li data-img="" class="species-item">Canela</li>
+          <li data-img="" class="species-item">Café</li>
+          <li data-img="" class="species-item">Cambucá</li>
+          <li data-img="" class="species-item">Cambuci</li>
+          <li data-img="" class="species-item">Fruta do milagre</li>
+          <li data-img="" class="species-item">Framboesa</li>
+          <li data-img="" class="species-item">Fruta do conde</li>
+          <li data-img="" class="species-item">Fruta pão</li>
+          <li data-img="" class="species-item">Figo</li>
+          <li data-img="" class="species-item">Goiaba tailandesa de Kg</li>
+          <li data-img="" class="species-item">Goiaba vermelha</li>
+          <li data-img="" class="species-item">Goiaba branca</li>
+          <li data-img="" class="species-item">Goiaba roxa</li>
+          <li data-img="" class="species-item">Graviola</li>
+          <li data-img="" class="species-item">Grumixama</li>
+          <li data-img="" class="species-item">Gabiroba</li>
+          <li data-img="" class="species-item">Ingá</li>
+          <li data-img="" class="species-item">Jabuticabeira híbrida</li>
+          <li data-img="" class="species-item">Jabuticabeira Sabará</li>
+          <li data-img="" class="species-item">Jabuticabeira Pohemia</li>
+          <li data-img="" class="species-item">Jabuticabeira branca</li>
+          <li data-img="" class="species-item">Jambo amarelo</li>
+          <li data-img="" class="species-item">Jambo roxo</li>
+          <li data-img="" class="species-item">Jambolão</li>
+          <li data-img="" class="species-item">Jatobá</li>
+          <li data-img="" class="species-item">Jaca (dura, mole)</li>
+          <li data-img="" class="species-item">Lichia</li>
+          <li data-img="" class="species-item">Mamão</li>
+          <li data-img="" class="species-item">Maracujá (doce, azedo)</li>
+          <li data-img="" class="species-item">Marmelo</li>
+          <li data-img="" class="species-item">Mangaba</li>
+          <li data-img="" class="species-item">Maçã</li>
+          <li data-img="" class="species-item">Mirtilo (Blue Berry)</li>
+          <li data-img="" class="species-item">Mangostão</li>
+          <li data-img="" class="species-item">Mangostin (fruta da rainha)</li>
+          <li data-img="" class="species-item">Nectarina</li>
+          <li data-img="" class="species-item">Noz pecan</li>
+          <li data-img="" class="species-item">Pêra</li>
+          <li data-img="" class="species-item">Pêssego (Vermelho, amarelo)</li>
+          <li data-img="" class="species-item">Pitomba</li>
+          <li data-img="" class="species-item">Pinha</li>
+          <li data-img="" class="species-item">Pequi</li>
+          <li data-img="" class="species-item">Pitanga</li>
+          <li data-img="" class="species-item">Romã</li>
+          <li data-img="" class="species-item">Rambutã</li>
+          <li data-img="" class="species-item">Seriguela</li>
+          <li data-img="" class="species-item">Sapoti</li>
+          <li data-img="" class="species-item">Tamarindo</li>
+          <li data-img="" class="species-item">Umbu</li>
+          <li data-img="" class="species-item">Uvaia</li>
+          <li data-img="" class="species-item">Uva (rosada, branca, sem semente)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MODAL DA GALERIA COMPLETA -->
+    <div id="modal-galeria" class="catalog-modal">
+      <div class="catalog-modal-content" style="max-width: 1000px;">
+        <button class="close-modal" aria-label="Fechar">&times;</button>
+        <div class="list-card-header">
+          <div class="modal-ico-img-container">
+            <img class="modal-ico-img" src="img/entradaviveiro.webp" alt="Mais fotos">
+          </div>
+          <h3>Galeria Completa</h3>
+        </div>
+        <p style="margin-bottom: 20px; color: #4B5A4E;">Explore todas as fotos das estufas, canteiros e mudas do nosso viveiro.</p>
+        <div id="modal-gallery-grid" class="modal-gallery-grid">
+          <div class="modal-gallery-item">
+            <img src="img/galeria/01.webp" alt="Foto do viveiro 1">
+          </div>
+          <div class="modal-gallery-item">
+            <img src="img/galeria/02.webp" alt="Foto do viveiro 2">
+          </div>
+          <div class="modal-gallery-item">
+            <img src="img/galeria/03.webp" alt="Foto do viveiro 3">
+          </div>
+          <div class="modal-gallery-item">
+            <img src="img/galeria/04.webp" alt="Foto do viveiro 4">
+          </div>
+          <div class="modal-gallery-item">
+            <img src="img/galeria/05.webp" alt="Foto do viveiro 5">
+          </div>
+          <div class="modal-gallery-item">
+            <div class="gallery-photo-placeholder">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Foto em breve</span>
+            </div>
+          </div>
+          <div class="modal-gallery-item">
+            <div class="gallery-photo-placeholder">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Foto em breve</span>
+            </div>
+          </div>
+          <div class="modal-gallery-item">
+            <div class="gallery-photo-placeholder">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Foto em breve</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIGHTBOX DA GALERIA -->
+    <div id="gallery-lightbox" class="lightbox">
+      <span class="close-lightbox">&times;</span>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Imagem ou vídeo anterior">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <img class="lightbox-content" id="lightbox-img" src="" alt="Imagem Expandida">
+      <video class="lightbox-content" id="lightbox-video" controls playsinline hidden></video>
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="Próxima imagem ou vídeo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="diff">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="tag">Por que escolher a gente</span>
+          <h2>Diferenciais Mudas Santos</h2>
+        </div>
+        <div class="diff-grid">
+          <div class="diff-item reveal">
+            <div class="diff-ico-container">
+              <img class="diff-ico-img" src="../img/mudasaudavel.webp" alt="Mudas saudáveis">
+            </div>
+            <h3>Mudas saudáveis</h3>
+            <p>Cuidado diário com rega, adubação e controle fitossanitário desde a semente.</p>
+          </div>
+          <div class="diff-item reveal">
+            <div class="diff-ico-container">
+              <img class="diff-ico-img" src="../img/entrega.webp" alt="Entrega regional">
+            </div>
+            <h3>Entrega regional</h3>
+            <p>Levamos suas mudas até você com cuidado no transporte para chegarem intactas.</p>
+          </div>
+          <div class="diff-item reveal">
+            <div class="diff-ico-container">
+              <img class="diff-ico-img" src="../img/atendimento.webp" alt="Atendimento próximo">
+            </div>
+            <h3>Atendimento próximo</h3>
+            <p>Orientação personalizada para escolher e cuidar da muda certa para seu espaço.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" class="gallery">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="tag">Um pouco do viveiro</span>
+          <h2>Galeria</h2>
+        </div>
+        <div id="gallery-grid" class="gal-grid reveal"></div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTO -->
+    <section class="quote-sec">
+      <div class="wrap reveal">
+        <div class="review-rating" aria-label="Avaliação de 5 de 5 estrelas no Google">
+          <span class="review-stars" aria-hidden="true">★★★★★</span>
+          <span class="google-source"><span class="google-logo" aria-hidden="true">G</span> Google</span>
+        </div>
+        <blockquote>“Mudas de excelente qualidade, atendimento nota 10! Recomendo.”
+        </blockquote>
+        <cite>— Cliente Mudas Santos</cite>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="contact">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <span class="tag" style="color:var(--gold)">Vamos conversar</span>
+          <h2>Peça sua muda ou visite o viveiro</h2>
+          <p>Atendemos por WhatsApp, telefone ou pessoalmente no viveiro. Conte pra gente o que você quer plantar.</p>
+          <div class="contact-info">
+            <div>
+              <span class="ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <a class="contact-location-link" href="https://www.google.com/maps/search/?api=1&query=Viveiro+Mudas+Santos%2C+Rod.+Comandante+Joao+Ribeiro+de+Barros%2C+km+508%2C+Herculandia+-+SP" target="_blank" rel="noopener noreferrer">
+                <span>Rod. Comandante João Ribeiro de Barros, Rodovia, km 508, Herculândia - SP</span>
+                <img class="location-arrow" src="https://www.svgrepo.com/show/533642/arrow-up-right.svg" alt="Abrir no Google Maps">
+              </a>
+            </div>
+            <div>
+              <span class="ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <a class="contact-phone-link" href="https://wa.me/5514996345797?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20o%20viveiro." target="_blank" rel="noopener noreferrer">
+                <span>(14) 99634-5797</span>
+                <img class="location-arrow" src="https://www.svgrepo.com/show/533642/arrow-up-right.svg" alt="Abrir WhatsApp">
+              </a>
+            </div>
+            <div>
+              <span class="ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </span>
+              Seg a sáb, 7h às 17h
+            </div>
+          </div>
+          <a class="btn btn-gold" href="https://wa.me/5514996345797?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20as%20mudas." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
+        </div>
+        <div class="contact-card reveal">
+          <h3>Envie uma mensagem</h3>
+          <p>Responderemos o mais rápido possível.</p>
+          <form onsubmit="event.preventDefault(); const nome = document.getElementById('nome').value; const msg = document.getElementById('msg').value; const texto = 'Olá, meu nome é ' + nome + ', estou procurando por ' + msg; window.open('https://wa.me/5514996345797?text=' + encodeURIComponent(texto), '_blank'); this.reset();">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input id="nome" type="text" placeholder="Seu nome" required>
+            </div>
+            <div class="field">
+              <label for="msg">O que você procura?</label>
+              <textarea id="msg" placeholder="Ex: mudas de limão e manjericão" required></textarea>
+            </div>
+            <button class="btn btn-gold" type="submit">Enviar mensagem</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo-text">Mudas Santos <span>Viveiro</span></div>
+          <p>Cultivamos mudas fortes e saudáveis — frutíferas, ornamentais, nativas e coqueiros. Transforme seu espaço, sítio ou jardim com a orientação de quem ama a natureza.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/5514996345797" target="_blank" rel="noopener noreferrer" class="social-icon" title="WhatsApp">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mudassantos" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Mudas Santos. Todos os direitos reservados.</span>
+        <a href="politica-privacidade.html" class="policy-link">Política de Privacidade</a>
+        <span>A natureza mais perto de você.</span>
+      </div>
+      <div class="site-credit">
+        <span class="site-credit-label">Desenvolvido por</span>
+        <a href="https://lvsolucoesdigitais.netlify.app" target="_blank" rel="noopener noreferrer" id="site-author-link" class="site-credit-link" aria-label="Autoria do site" aria-disabled="true">
+          <img src="img/marcadagua.webp" alt="Marca d'água da autoria do site">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const heroArt = document.querySelector('.hero-art');
+    window.setTimeout(() => heroArt?.classList.add('is-hovered'), 1500);
+
+    const galleryGrid = document.getElementById('gallery-grid');
+    const modalGalleryGrid = document.getElementById('modal-gallery-grid');
+    const photos = Array.from({ length: 51 }, (_, index) => `img/galeria/${String(index + 1).padStart(2, '0')}.webp`);
+    const videos = ['img/galeria/52.mp4', 'img/galeria/53.mp4'];
+    const media = [...photos, ...videos];
+    const galleryClasses = ['g1', 'g2', 'g3', 'g4', 'g6', 'g5'];
+    const shuffledMedia = [...media].sort(() => Math.random() - 0.5);
+
+    function mediaElementMarkup(src, index) {
+      const extension = src.split('.').pop().toLowerCase();
+      return extension === 'mp4' || extension === 'webm' || extension === 'ogg'
+        ? `<video src="${src}" aria-label="Vídeo do viveiro ${index + 1}" muted playsinline preload="metadata"></video><span class="video-badge" aria-label="Vídeo">▶</span>`
+        : `<img src="${src}" alt="Foto do viveiro ${index + 1}" loading="lazy">`;
+    }
+
+    function mediaMarkup(src, index, className) {
+      return `<div class="${className}">${mediaElementMarkup(src, index)}</div>`;
+    }
+
+    galleryGrid.innerHTML = shuffledMedia.slice(0, 6).map((src, index) =>
+      mediaMarkup(src, index, `gal-item ${galleryClasses[index]}`)
+    ).join('') + `
+      <div class="gal-item g-more modal-trigger" data-target="modal-galeria" tabindex="0" role="button">
+        ${mediaElementMarkup(shuffledMedia[6], 6)}
+        <div class="g-more-content"><div class="plus-icon">+</div><span>Mais</span></div>
+      </div>
+    `;
+
+    modalGalleryGrid.innerHTML = media.map((src, index) =>
+      mediaMarkup(src, index, 'modal-gallery-item')
+    ).join('');
+
+    // LÓGICA DO MENU RESPONSIVO (BURGER)
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (burger) {
+      burger.addEventListener('click', () => {
+        const isOpen = burger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        burger.setAttribute('aria-expanded', isOpen);
+      });
+    }
+
+    // Fecha o menu ao clicar em qualquer link
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(link => {
+      link.addEventListener('click', () => {
+        if (burger && burger.classList.contains('active')) {
+          burger.classList.remove('active');
+          navLinks.classList.remove('active');
+          burger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal, .vine-path, .leaf-node');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){ e.target.classList.add('in-view'); }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+
+    // LÓGICA DOS MODAIS
+    const modalTriggers = document.querySelectorAll('.modal-trigger');
+    const modals = document.querySelectorAll('.catalog-modal');
+    const closeBtns = document.querySelectorAll('.close-modal');
+
+    modalTriggers.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const modal = document.getElementById(targetId);
+        if (modal) modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    closeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.catalog-modal').classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Fecha o modal ao clicar fora do conteúdo
+    modals.forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // Cada espécie abre uma conversa específica no WhatsApp.
+    document.querySelectorAll('.species-item').forEach(item => {
+      const name = item.textContent.trim();
+      const link = document.createElement('a');
+      link.href = `https://wa.me/5514996345797?text=${encodeURIComponent(`Quero saber mais sobre ${name}.`)}`;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = name;
+      item.replaceChildren(link);
+      item.removeAttribute('data-img');
+    });
+
+    /* PREVIEW DE FOTOS DAS MUDAS - IMPLEMENTAR FUTURAMENTE
+    document.querySelectorAll('.species-item').forEach(item => {
+      item.addEventListener('click', event => {
+        event.preventDefault();
+        const imageUrl = item.dataset.img;
+        if (!imageUrl) return;
+
+        previewContainer.innerHTML = `
+          <img src="${imageUrl}" alt="${item.textContent.trim()}">
+          <button type="button" class="preview-close">&times;</button>
+        `;
+        previewContainer.classList.add('show');
+      });
+    });
+
+    previewContainer.addEventListener('click', event => {
+      if (event.target.matches('.preview-close')) {
+        previewContainer.classList.remove('show');
+      }
+    });
+    */
+
+    // LÓGICA DO LIGHTBOX DA GALERIA
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideo = document.getElementById('lightbox-video');
+    const closeLightboxBtn = document.querySelector('.close-lightbox');
+    const previousLightboxBtn = document.querySelector('.lightbox-prev');
+    const nextLightboxBtn = document.querySelector('.lightbox-next');
+    let currentLightboxIndex = -1;
+
+    function showLightboxMedia(index) {
+      currentLightboxIndex = (index + media.length) % media.length;
+      const source = media[currentLightboxIndex];
+      const isVideo = /\.(mp4|webm|ogg)$/i.test(source);
+
+      lightboxVideo.pause();
+      lightboxImg.hidden = isVideo;
+      lightboxVideo.hidden = !isVideo;
+
+      if (isVideo) {
+        lightboxVideo.src = source;
+        lightboxVideo.load();
+      } else {
+        lightboxVideo.removeAttribute('src');
+        lightboxVideo.load();
+        lightboxImg.src = source;
+        lightboxImg.alt = `Foto do viveiro ${currentLightboxIndex + 1}`;
+      }
+    }
+
+    function openLightbox(index) {
+      showLightboxMedia(index);
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    // Delegação de evento: também funciona para as fotos carregadas depois da abertura do modal.
+    document.addEventListener('click', (event) => {
+      const mediaElement = event.target.closest('.gal-item:not(.g-more) img, .gal-item:not(.g-more) video, .modal-gallery-item img, .modal-gallery-item video');
+      if (!mediaElement) return;
+
+      const source = mediaElement.currentSrc || mediaElement.src;
+      const index = media.findIndex((item) => new URL(item, document.baseURI).href === source);
+      openLightbox(index === -1 ? 0 : index);
+    });
+
+    function closeLightbox() {
+      lightboxVideo.pause();
+      lightboxVideo.removeAttribute('src');
+      lightboxVideo.load();
+      lightbox.classList.remove('active');
+      // Mantém a trava de rolagem se o modal da galeria ainda estiver ativo por baixo
+      const isGalleryModalActive = document.getElementById('modal-galeria').classList.contains('active');
+      if (!isGalleryModalActive) {
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Fecha o lightbox no clique do X
+    closeLightboxBtn.addEventListener('click', closeLightbox);
+    previousLightboxBtn.addEventListener('click', () => showLightboxMedia(currentLightboxIndex - 1));
+    nextLightboxBtn.addEventListener('click', () => showLightboxMedia(currentLightboxIndex + 1));
+
+    // Fecha o lightbox ao clicar na área escura (fora da imagem)
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (event.key === 'ArrowLeft') showLightboxMedia(currentLightboxIndex - 1);
+      if (event.key === 'ArrowRight') showLightboxMedia(currentLightboxIndex + 1);
+      if (event.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
