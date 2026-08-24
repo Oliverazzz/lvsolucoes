@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/*"
-  to = "/lvpro/:splat"
-  status = 200
+  from = "/"
+  to = "/lvpro/index.html"
+  status = 301
