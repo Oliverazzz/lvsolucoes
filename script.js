@@ -43,9 +43,9 @@
   ];
 
   const PROJECTS = [
-    { title: 'LP para Lançamento Infoproduto', tags: 'Landing Page • Catálogo • Design', stat: '+215% Conversões', img: 'img/agroarte.webp', link: 'https://agroartelp.netlify.app/' },
-    { title: 'LP para Produto Físico', tags: 'Landing Page • Design', stat: '+178% Conversões', img: 'img/mudassantos.webp', link: 'https://mudassantos.netlify.app/' },
-    { title: 'LP para Mentoria Online', tags: 'Landing Page • Sistema • Design', stat: '+206% Conversões', img: 'img/sitedemonstracao.webp', link: '' },
+    { title: 'LP para Lançamento Infoproduto', tags: 'Landing Page • Catálogo • Design', stat: '+215% Conversões', img: '../img/agroarte.webp', link: 'https://agroartelp.netlify.app/' },
+    { title: 'LP para Produto Físico', tags: 'Landing Page • Design', stat: '+178% Conversões', img: '../img/mudassantos.webp', link: 'https://mudassantos.netlify.app/' },
+    { title: 'LP para Mentoria Online', tags: 'Landing Page • Sistema • Design', stat: '+206% Conversões', img: '../img/sitedemonstracao.webp', link: '' },
   ];
 
   const TESTIMONIALS = [
